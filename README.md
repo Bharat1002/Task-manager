@@ -36,6 +36,11 @@ npm i
 ```
 Note: Make sure your mongodb server is running
 
+Start Nodemon with below command
+```
+npm run dev
+```
+
 ## Postman setup
 
 Create Collection Task App in postman.
@@ -163,5 +168,5 @@ in value select image file from your machine
 
 Delete Avatar for user Request
 Request Type DELETE
-route :  {{url}}/users/me/avatar
+route :  {{url}}/users/me/avatar\n
 Authorization Type inherit auth from parent
