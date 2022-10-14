@@ -1,7 +1,11 @@
 # Task-manager-API
 
-This is a Task Manager API application buil using Node.js, express and MongoDB (mongoose ODM).
-
+This is a Task Manager API application buil using Node.js, express and MongoDB (mongoose ODM).  
+API provides several routes.  
+Routes for Users such as Login user, Signup user(create user), Update/Delete user, Upload avatar for user.  
+Routes for tasks such as Create tasks for current user, Get all tasks of current(logged in) user, Update/Delete tasks.  
+API is designed with help of Postman tools and tested using JEST Framework.
+ 
 ## Setup
 clone repo in your directory
 ```
