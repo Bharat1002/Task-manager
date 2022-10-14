@@ -12,8 +12,8 @@ in src folder create db folder.
 inside db folder create mongoose.js file.  
 add MongoDB data base connection in mongoose.js file, it will look like something as below
 ```
+PORT=3000
 const mongoose = require('mongoose');
-
 mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api');
 ```
 if your database has auth enabled use below connection url
@@ -23,11 +23,22 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://user:password@127.0.0.1:27017/task-manager-api');
 ```
 
-create .env file in root directory of project  
+create config directory in root directory of project
+create dev.env file in config directory 
 
-in .env file add your secret key for token generation
+in dev.env file add your secret key for token generation (add any random string without space) and mongodb_url for connection
 ```
+PORT=3000
+MONGODB_URL='mongodb connection url'
 TOKEN_KEY='YourTokenKey'
+```
+(Optional)  
+if you want to send mail on user create and delete, then create mailgun account and get api key and 
+domain name and add it in dev.env file as below. in MY_MAIL variable set your mail which you used to create mailgun account.
+```
+MAIL_GUN_API_KEY=maingun api key from your account
+Domain_name='mailgun domai name ends with mailgun.org'
+MY_MAIL='Your mail id'
 ```
 
 run below command to download dependencies
@@ -169,3 +180,13 @@ Delete Avatar for user Request
 Request Type DELETE  
 route :  {{url}}/users/me/avatar  
 Authorization Type inherit auth from parent
+
+## Testing API with JEST
+In config folder, create test.env file for setting up test environment.  
+copy all details from dev.env to test.env.  
+Change database name in MONGODB_URL variable in test.env file.
+
+run below command to run tests on user routes and task routes.
+```
+npm run test
+```

@@ -1,5 +1,5 @@
 const mailgun = require("mailgun-js");
-require('dotenv').config();
+// require('dotenv').config();
 
 const DOMAIN = process.env.Domain_name;
 const api_key = process.env.MAIL_GUN_API_KEY;
